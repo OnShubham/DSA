@@ -40,6 +40,7 @@ Armstrong()
 def prime_num(n = 1483):
     
 
+    
     cnt = 0
     
     for i in range(1, n + 1):
@@ -79,3 +80,25 @@ prime_num()
 # prime_num()
 
         
+        
+        
+# check prime
+
+
+def prime_nums(n = 3):
+    
+    cnt = 0
+    
+    for i in range(1, n + 1):
+        
+        if n % i == 0:
+            
+            cnt += 1
+            
+            
+    if cnt == 2 :
+        print("True")
+    else:
+        print("Flase")
+        
+prime_nums()
