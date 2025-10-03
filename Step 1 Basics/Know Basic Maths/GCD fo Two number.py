@@ -51,3 +51,4 @@ gcd_1(2,6)
 # n, m = 2, 2 % 6
 # m is 0
 # stop loop
+

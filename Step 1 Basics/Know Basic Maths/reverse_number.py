@@ -97,3 +97,31 @@ def rev(n = 567):
 
 
 rev()
+
+
+
+
+def rev_num(n = 231):
+    
+    revers_number = 0
+    
+    while n > 0:
+        
+        last_digit = n % 10
+        revers_number = revers_number * 10 + last_digit
+        n = n // 10 
+        
+    return print(revers_number)
+
+rev_num()
+
+
+# GCD
+
+def gcd(n1, n2):
+    
+    while n2 != 0:
+        n1, n2 = n2, n1 % n2
+    return print(n1)
+        
+gcd(5, 10)
