@@ -21,3 +21,34 @@ if __name__ == "__main__":
 
 
   
+
+
+def rever_num (n = 123):
+    
+    cnt = 0 
+    
+    while n > 0:
+        
+        last_digit = n % 10 
+        
+        cnt = cnt * 10 + last_digit
+        
+        n = n // 10 
+        
+    return print("number :", cnt)
+rever_num()
+
+
+
+def fact_num(n):
+    
+    if n == 1:
+        return 1
+    return n * fact_num(n - 1)
+
+n = 5
+
+print(fact_num(n))
+
+
+
