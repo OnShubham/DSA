@@ -2,10 +2,10 @@
 Problem: Number of Divisors
 
 You are given a positive integer n. 
-Your task is to return all the divisors of n 
-in ascending order.
+Your task is to return all the divisors 
+of n in ascending order.
 
-A divisor of an integer n is any integer 
+A divisor of an integer n is any integer
 i such that n % i == 0.
 
 ---
@@ -35,8 +35,6 @@ def divisor_num(n):
             arr.append(i)
             
     return print(arr)
-        
-
             
 
 
