@@ -60,7 +60,92 @@ def find_highest_num(arr,n):
             
 
 
+
+
+
+
+
+
+def find_count_num(arr,n):
+    
+    empty = [False] * n
+    max_freq = 0
+    min_freq = n + 1
+    max_ele = None
+    min_ele = None
+    
+    for i in range(n):
+        
+        if empty[i] == True:
+            continue
+        
+        count = 1
+        
+        for j in range(i + 1, n):
+            
+            if arr[j] == arr[i]:
+                
+                empty[j] = True
+                
+                count += 1
+                
+        
+        
+        if count > max_freq:
+            max_freq = count
+            max_ele = arr[i]
+            
+        if count < min_freq:
+             
+            min_freq = count
+            min_ele = arr[i]
+            
+        
+    print(min_ele, max_ele)
+
+
+
+
+
+
+
 if __name__ == '__main__':
     arr = [5, 2, 2,2,2, 3, 3, 3]
     n = len(arr)
-    find_highest_num(arr, n)
+    find_count_num(arr, n)
+    
+    
+    
+    
+    
+    
+    
+    
+def count_num(arr, n):
+    
+    visited = [False] * n
+    
+    for i in range(n):
+        
+        if visited[i] == True:
+            
+            continue
+        
+        count = 1
+        
+        for j in range(i + 1, n):
+            
+            if arr[j] == arr[i]:
+                
+                visited[j] = True
+                
+                count += 1
+                
+        print(arr[i], count)
+
+if __name__ == '__main__':
+    
+        
+    arr = [1,2,3]
+    n = len(arr)
+    count_num(arr, n)
