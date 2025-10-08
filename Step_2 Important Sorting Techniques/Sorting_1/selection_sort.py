@@ -93,3 +93,102 @@ Array is now fully sorted:
 ✅ [11, 12, 22, 25, 64]
 
 """
+
+
+
+def test(arr, n):
+    
+    
+    for i in range(n - 1):
+        
+        index = i
+        
+        for j in range(i + 1, n):
+            if arr[j] < arr[index]:
+                index = j
+                
+        arr[i] , arr[index] = arr[index], arr[i]
+    return print(arr)
+    
+    
+arr = [4,3,1,5,2,8]
+n = len(arr)
+test(arr, n)
+
+
+def test_1(arr, n):
+    
+    for i in range(n - 1):
+        
+        min_index = i
+        
+        for j in range(i + 1, n):
+            
+            if arr[j] < arr[min_index]:
+                
+                min_index = j
+                
+        arr[i], arr[min_index] = arr[min_index] , arr[i]
+        
+    return print(arr)
+
+
+
+arr = [4,3,1,5]
+n = len(arr)
+test_1(arr, n)
+
+
+
+def test_2(arr, n):
+    
+
+    
+    for i in range(n - 1):
+        
+        min_index = i
+        
+        for j in range(i + 1, n):
+            
+            
+            if arr[j] < arr[min_index]:
+                
+                min_index = j
+                
+                
+                
+        arr[i] , arr[min_index] = arr[min_index], arr[i]
+    
+    
+    print(arr)
+
+
+
+
+arr = [42, 17, 93, 8, 65, 31, 77, 23, 56, 12]
+n = len(arr)
+# test_2(arr, n)
+
+
+def test_3(arr, n):
+    
+    for i in range(n - 1):
+        
+        index = i
+        
+        for j in range(i + 1, n):
+            
+            if arr[j] > arr[index]:
+                
+                index = j
+                
+        arr[i] , arr[index] = arr[index], arr[i]
+        
+    print(arr) 
+
+
+
+
+arr = [42, 17, 93, 8, 65, 31, 77, 23, 56, 12]
+n = len(arr)
+test_3(arr, n)
