@@ -192,3 +192,80 @@ def test_3(arr, n):
 arr = [42, 17, 93, 8, 65, 31, 77, 23, 56, 12]
 n = len(arr)
 test_3(arr, n)
+
+
+
+def last(arr,n):
+    
+    for i in range(n - 1):
+        
+        
+        last = i 
+        
+        
+        for j in range(i + 1, n):
+            
+            if arr[j] < arr[last]:
+                
+                last = j 
+                
+        arr[i], arr[last] = arr[last] , arr[i]
+    
+    
+    print( "Last",arr)
+
+
+
+arr = [42, 17, 93, 8, 65, 31, 77, 23, 56, 12]
+n = len(arr)
+last(arr, n)
+
+
+def sort(num, n):
+    
+    for i in range( n - 1):
+        
+        index = i 
+        
+        for j in range(i + 1, n):
+            
+            if num[j] < num[index]:
+                index = j 
+                
+        num[i], num[index] = num[index],num[i]
+        
+    return print("latest",num)
+        
+       
+        
+    
+    
+num = [42, 17, 93, 8, 65, 31, 77, 23, 56, 12]
+n = len(arr)
+sort(num, n)
+
+
+
+
+def sort_test(num, n):
+    
+    for i in range(n - 1):
+        
+        index = i 
+        
+        for j in range(i + 1 , n):
+            
+            if num[j] < num[index]:
+                
+                index = j
+                
+                
+        num[i] , num[index] = num[index], num[i]
+    
+    return print(num, "practice")
+    
+    
+
+num = [42, 17, 93, 8, 65, 31, 77, 23, 56, 12]
+n = len(arr)
+sort_test(num, n)
