@@ -139,5 +139,207 @@ def calculate_merge(left,right):
 
 
 arr = [4, 2, 1, 6, 7]
-sorted_arr = calculate_the_left_and_right(arr)
+# sorted_arr = calculate_the_left_and_right(arr)
 print("Sorted :", sorted_arr)
+
+
+
+
+def calculate_the_left_and_right(arr):
+    
+    
+    if len(arr) <= 1 :
+        return arr
+    
+    
+    mid = len(arr) // 2
+    
+    
+    left = calculate_the_left_and_right(arr[mid:])
+    right = calculate_the_left_and_right(arr[:mid])
+    
+    
+    return sort_merge(left,right)
+
+
+def sort_merge(left,right):
+    
+    result = []
+    
+    i = j = 0
+    
+    
+    while i < len(left) and j < len(right):
+        
+        if left[i] <= right[j]:
+            
+            result.append(left[i])
+            
+            i += 1
+            
+        else:
+            result.append(right[j])
+            
+            j += 1
+            
+        
+        
+    result.extend(left[i:])
+    result.extend(right[j:])
+    
+    
+    return result
+
+
+
+
+
+
+def test(arr):
+    
+    # check the arr not in 0 
+    
+    if len(arr) <= 1:
+        return arr
+    
+    
+    # divided a arry in subarry mid
+    
+    
+    mid = len(arr) // 2
+    
+    
+    # make a left and right arr
+    
+    left = test(arr[mid:])
+    right = test(arr[:mid])
+    
+    
+    # return in the next func to sort
+    
+    
+    return test_sort(left,right)
+
+
+def test_sort(left,right):
+    
+    
+    # empty arr
+    
+    final_arr = []
+    
+    # i and j intlize 
+    
+    i = j = 0
+    
+    
+    # calculate the arr and conver in subarry one buy one 
+    
+    while i < len(left) and j < len(right):
+        
+        if left[i] <= right[j]:
+            
+            final_arr.append(left[i])
+            
+            i += 1
+            
+        else:
+            
+            final_arr.append(right[j])
+            
+            j += 1
+            
+            
+    
+    
+    final_arr.extend(left[i:])
+    
+    final_arr.extend(right[j:])
+    
+    
+    return final_arr
+    
+
+    
+    
+def test_1(arr):
+    
+    # check the arr is not 0 
+    
+    if len(arr) <= 1:
+        return arr
+    
+    
+    # divided a arr in 2 arr
+    
+    
+    mid = len(arr) // 2
+    
+    
+    # left and  right arr
+    
+    left = test_1(arr[mid:])
+    right = test_1(arr[:mid])
+    
+    
+    return test_sort_2(left, right)
+
+
+def test_sort_2(left, right):
+    
+    # empty arr
+    
+    empty_arr = []
+    
+    # i and j intinlize 
+    
+    i = j = 0
+    
+    
+    # Compare the arr and subarry
+    
+    while i < len(left) and j < len(right):
+        
+        # check the left and right arr
+        
+        if left[i] <= right[j]:
+            
+            empty_arr.append(left[i])
+            
+            i += 1
+            
+        else:
+            
+            empty_arr.append(right[j])
+            
+            j += 1
+            
+    
+    
+    empty_arr.extend(left[i:])
+    empty_arr.extend(right[j:])
+    
+    
+    return empty_arr
+    
+    
+
+
+
+
+    
+
+
+
+
+
+
+if __name__ == "__main__":    
+
+    arr = [5,6,3,1,4,2,2,1,2,]
+    sorted_arr = test_1(arr)
+    print(" test:", sorted_arr)
+    
+    
+    
+    
