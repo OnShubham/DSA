@@ -342,4 +342,73 @@ if __name__ == "__main__":
     
     
     
+def final(arr):
     
+    # check the arr is not < 0
+    
+    if len(arr) <= 1:
+        
+        return arr
+    
+    
+    # divided arr
+    
+    
+    mid = len(arr) // 2   # divided a 2 arry
+    
+    # left and right arr
+    
+    
+    left = final(arr[mid:])
+    right = final(arr[:mid])
+    
+    # return the left and right arr to comapre  fucntion
+    return final_compar(left, right)
+    
+
+def final_compar(left, right):
+    
+    
+    # make a empty arr
+    
+    final_arr = []
+    
+    # i and j intlize left and right
+    
+    i = j = 0
+    
+    
+    # compare the arr and subarry 
+    
+    while i < len(left) and j < len(right):
+        
+        if left[i] <= right[j]:
+            
+            final_arr.append(left[i])
+            
+            i += 1
+        else:
+            final_arr.append(right[j])
+            
+            j += 1
+            
+            
+    final_arr.extend(left[i:])
+    final_arr.extend(right[j:])
+    
+    
+    return final_arr
+    
+    
+    
+    
+if __name__ == "__main__":    
+
+    arr = [5,6,3,1,4,2,2,1,2,]
+    sorted_arr = final(arr)
+    print(" Final Test:", sorted_arr)
+    
+    
+    
+
+
