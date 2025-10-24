@@ -412,3 +412,60 @@ if __name__ == "__main__":
     
 
 
+
+
+
+def merger(arr):
+    
+    
+    # check not in less then 1 
+    
+    if len(arr) <= 1:
+        return arr
+    
+    
+    mid = len(arr) // 2
+    
+    
+    left = merger(arr[mid:])
+    right = merger(arr[:mid])
+    
+    
+    return merger_2(left, right)
+
+
+def merger_2(left, right):
+    
+    final = []
+    
+    i = j = 0
+    
+    
+    while i < len(left) and j < len(right):
+        
+        if left[i] <= right[j]:
+            
+            final.append(left[i])
+            
+            i += 1
+            
+        else:
+            
+            final.append(right[j])
+            
+            j += 1
+            
+    final.extend(left[i:])
+    final.extend(right[j:])
+    
+    return final
+    
+    
+
+
+if __name__ == "__main__":    
+
+    arr = [5,6,3,1,4,2,2,1,2,]
+    sorted_arr = merger(arr)
+    print(" 1 Test:", sorted_arr)
+    
