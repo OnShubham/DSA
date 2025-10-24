@@ -40,9 +40,27 @@ def merer_2(left, right):
 
 
 
+def buble_sort(arr,n):
+    
+    if n == 1:
+        return
+    
+    for i in range( n - 1):
+        
+        if arr[i] > arr[i + 1]:
+            
+            arr[i], arr[i + 1] = arr[i + 1], arr[i]
+    
+    
+    buble_sort(arr,n - 1)
+
+
 
 if __name__ == "__main__":
     
     arr = [2,3,2,1,4,5,2,1,2,3,3,4]
+    n = len(arr)
+    buble_sort(arr,n)
+    print("buble", arr)
     a = merger(arr)
     print("test :", a)
