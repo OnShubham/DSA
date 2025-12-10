@@ -27,6 +27,8 @@ def check_arr_sorted_2(arr,n):
             
     return print("true")
 
+
+
 if __name__ == "__main__":
     arr = [1,2]
     x = arr
