@@ -48,6 +48,24 @@ def check_the_arr(arr, n):
 
 
 
+
+def check_the_arr_1(arr,n):
+    
+    
+    for i in range(n):
+        
+        for j in range(i + 1 , n):
+            
+            if arr[j] < arr[i]:
+                
+                return print(arr[j], arr[i], "False")
+            
+    return print("true")
+
+
+
+
+
 if __name__ == "__main__":
     
     # Example array
@@ -57,4 +75,4 @@ if __name__ == "__main__":
     n = len(arr)
     
     # Call the function to check if the array is sorted
-    check_the_arr(arr, n)
+    check_the_arr_1(arr, n)
