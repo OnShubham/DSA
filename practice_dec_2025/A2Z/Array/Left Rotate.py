@@ -28,8 +28,57 @@ def rotation_arr_1(arr,n):
     
     print(arr)
     
+
+
+def test(arr,n):
+    
+    dummy = arr[0]
+        
+    for i in range(1,n):
+        
+        arr[i - 1] = arr[i]
+    
+    
+    arr[-1] = dummy
+    
+    print(arr)
+    
+    
+    
+    
+
+def test_1(arr,n):
+
+    data = arr[0]
+    
+    for i in range(1, n):
+        
+        
+        arr[i - 1] = arr[i]
+        
+    
+    arr[-1] = data
+
+    print(arr)
+        
+def final_test(arr,n):
+    
+    data = arr[0]
+    
+    
+    for i in range(1, n):
+        
+        arr[i - 1] = arr[i]
+        
+    arr[-1] = data
+    
+    print(arr)
+    
+        
+    
 if __name__ == "__main__":
 
     arr = [1,2,3,4,5,6,7]
     n = len(arr)
-    rotation_arr_1(arr, n)
+    # rotation_arr_1(arr, n)
+    test_1(arr,n)
